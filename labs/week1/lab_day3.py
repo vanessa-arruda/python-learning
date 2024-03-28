@@ -1,7 +1,8 @@
+import random #for exercise 5
 # 1. Given a list of integers, return True if the sequence of numbers 1, 2, 3 appears in the list somewhere.
 
 def listCheck(my_list):
-    #iterate through entire list "-2" meaning that I will always pick min of 3 elements to check always
+    #iterate through entire list "-2" meaning that I will always pick min of 3 elements, considering entire list length
     for i in range(len(my_list)-2):
         if my_list[i] == 1 and my_list[i+1] == 2 and my_list[i+2] == 3:
             return print(True)
@@ -33,7 +34,7 @@ def changeStr(str):
         for i in range(len(str)):
             if i % 2 == 0:
                 new_str += str[i]
-        return print(new_str)
+        print(new_str)
     
 #tests
 changeStr("Vanessa") #expected "Vnsa"
@@ -50,7 +51,7 @@ def doubleChars(str):
     else:
         for i in range(len(str)):
             new_str += str[i] * 2
-        return print(new_str)
+        print(new_str)
 
 #tests
 doubleChars("Hi") #expected "HHii"
@@ -65,7 +66,7 @@ def count_evens(int_list):
     for item in int_list:
         if item % 2 == 0:
             even_count += 1
-    return print(even_count)
+    print(even_count)
 
 #test
 count_evens([1,2,3,4,6,8,10]) #expected 5
@@ -74,6 +75,28 @@ count_evens([2]) #expected 1
 
 print("--------------------next exercise-5------------------------\n")
 # 5. Optional Lab - Guessing game
+#import random in line 1
+def generate_3digit_num():
+# computer_choice = #random 3 digit number that cannot repeat
+    three_digits_number = [0,0,0]
+    while three_digits_number[0] == 0:
+        digits = list(range(10))
+        random.shuffle(digits)
+        three_digits_number = digits[:3]
+            # computer_choice = int(''.join([str(item) for item in three_digits_number]))
+    return three_digits_number
 
+#main game function execution
 def guessNumberGame():
-    
+
+    computer_choice = generate_3digit_num()
+    print("Computer choice is {}".format(computer_choice))
+
+    #scope of user choice function()
+    #convert user input to list, to compare equaly with computer choice
+    user_choice = list(input("Guess the 3 digit number the computer selected:\n"))
+    user_choice = [int(item) for item in user_choice]
+    print("Your choice is {}".format(user_choice))
+
+
+guessNumberGame()
