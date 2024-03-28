@@ -1,6 +1,19 @@
-# Write a program that takes two integers as input, base and exponent, and calculates the power using loops.
-# Write a program that calculates the sum of all elements in a given tuple.
-# Write a program that creates a new tuple containing only the even numbers from a given tuple of integers.
-# Write a program that merges two dictionaries into a single dictionary. If a key is common to both dictionaries, the value from the second dictionary should be used.
-# Write a program that takes a list of integers as input and uses list comprehension to create a new list containing only the even numbers from the original list.
-# Write a program that takes a string as input and prints its reverse.
+#Given a list of integers, return True if the sequence of numbers 1, 2, 3 appears in the list somewhere.
+
+def listCheck(my_list):
+    for i in range(len(my_list)-2):
+        if my_list[i] == 1 and my_list[i+1] == 2 and my_list[i+2] == 3:
+            return True
+        else:
+            return False
+
+listCheck([1,2,0,1,2,3])
+
+#Given a string, return a new string made of every other character starting with the first, so "Hello" yields "Hlo".
+
+def changeStr(str):
+    if len(str) <= 1:
+        return str
+    else:
+        
+changeStr("V")
