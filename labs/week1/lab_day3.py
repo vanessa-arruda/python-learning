@@ -36,6 +36,7 @@ def changeStr(str):
         print(new_str)
     
 #tests
+changeStr("Hello") #expected "Hlo"
 changeStr("Vanessa") #expected "Vnsa"
 changeStr("Va") #expected "V"
 changeStr("") #expected "You gave me no string to change."

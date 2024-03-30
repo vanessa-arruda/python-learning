@@ -18,15 +18,26 @@
 
 # func(1,2, c=3,d=4)
 
-def func(a, b, *args, name='John', **kwargs):
-    print('a = {}'.format(a))
-    print('b = {}'.format(b))
-    print('args = {}'.format(args)) #tuple
-    print('name = {}'.format(name))
-    print('kwargs = {}'.format(kwargs)) #dict
+# def func(a, b, *args, name='John', **kwargs):
+#     print('a = {}'.format(a))
+#     print('b = {}'.format(b))
+#     print('args = {}'.format(args)) #tuple
+#     print('name = {}'.format(name))
+#     print('kwargs = {}'.format(kwargs)) #dict
 
-func(1,2,3,4,5, 'a', name='Anna', age='34', email='anna@email.com')
+# func(1,2,3,4,5, 'a', name='Anna', age='34', email='anna@email.com')
 
+# def string_splosion(str):
+#   result = ""
+  
+#   for i in range(len(str)):
+#     for j in range(len(str)):
+#         result = result + str[i]
+#     return result
+
+# print(string_splosion("Bye"))
+
+print("Hello")
 
 
 
