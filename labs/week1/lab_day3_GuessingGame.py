@@ -36,15 +36,11 @@ def guess_number_game():
             if user_choice[i] == computer_choice[j]:
                 some_match = True
                 found = True
-                if i != j:
-                    all_match = False
+                if i == j:
+                    all_match = True
         if not found:
             all_match = False
     
-    print("all match:", all_match)
-    print("some match:",some_match)
-    print("found:",found)
-
     # match output
     if all_match:
         print("Match!")
