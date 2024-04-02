@@ -27,15 +27,31 @@ def guess_number_game():
     print("Your choice is {}".format(user_choice))
 
     #comparison between both lists
+    all_match = False
+    some_match = False
+    found = False
+
     for i in range(len(user_choice)):
         for j in range(len(computer_choice)):
-            print(f"User choice [{i}] {user_choice[i]}, Computer choice [{j}] {computer_choice[j]}")
-            if user_choice[i] == computer_choice[j] and i == j:
-                print("match")
-                break
-            elif user_choice[i] == computer_choice[j] and i != j:
-                print("close")
-            else:
-                print("nope")
+            if user_choice[i] == computer_choice[j]:
+                some_match = True
+                found = True
+                if i != j:
+                    all_match = False
+        if not found:
+            all_match = False
+    
+    print("all match:", all_match)
+    print("some match:",some_match)
+    print("found:",found)
+
+    # match output
+    if all_match:
+        print("Match!")
+    elif some_match:
+        print("Close!")
+    else:
+        print("Nope!")
+
 
 guess_number_game()
