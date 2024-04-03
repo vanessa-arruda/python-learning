@@ -18,11 +18,9 @@ def check_prime(n):
       return False
   return True
 
-lst = [] ## append in the end?
-
-num = 5
-list_prime = list(filter(lambda n: [n for i in range(2,n) if n % i == 0], range(2, num+1)))
-
+num = 11
+list_prime = list(filter(lambda n: check_prime(n), range(2, num+1)))
+print(list_prime)
 
 print("----------------Exericise 4-------------------")
 # 4. Write a program that modifies a global variable inside a function
