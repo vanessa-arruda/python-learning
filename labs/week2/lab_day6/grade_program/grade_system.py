@@ -1,6 +1,6 @@
 from student import Student
 
-class Grade_system:
+class GradeSystem:
     def __init__(self):
         self.student = []
     def add_student(self, new_student):
@@ -16,7 +16,7 @@ class Grade_system:
             print(f"{i.name} new grade is: {i.promote()}")
             print("---------------------------")
 def main():
-    grade_data = Grade_system()
+    grade_data = GradeSystem()
 
     student1 = Student('Anna', 15, 9)
     grade_data.add_student(student1)
