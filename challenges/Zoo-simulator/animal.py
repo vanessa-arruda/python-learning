@@ -9,8 +9,12 @@ class Animal:
         #conditional to not allow energy above max energy
         if self.energy > max_energy:
             self.energy = max_energy
-        print(f"{self.name} is a {self.__class__.__name__}. current energy is {self.energy}")
-    
+        if self.name[0].upper() in ["A", "E", "I", "O", "U"]:
+            article = "an"
+        else:
+            article = "a"
+        print(f"{self.name} is {article} {self.__class__.__name__}. Current energy is {self.energy}")
+
     def get_name(self):
         return self.name
 
