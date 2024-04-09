@@ -9,7 +9,7 @@ class Animal:
     #conditional to not allow energy above max energy
     if self.energy > max_energy:
       self.energy = max_energy
-    print(f"{self.name} is a current energy is {self.energy}")
+    print(f"{self.name} is a {self.__class__.__name__}. The current energy is {self.energy}")
   def eat(self, food):
     print(f"{self.name} is eating {food}...")
     if self.energy >= self.max_energy:

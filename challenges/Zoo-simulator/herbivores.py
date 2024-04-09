@@ -11,6 +11,8 @@ class Herbivore(Animal):
     def run_around(self):
         print(f"{self.name} is running around")
 
+    #create play() with others (visitors/herbivores)
+
 
 
 
