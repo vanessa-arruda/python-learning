@@ -29,4 +29,4 @@ class Monkey(Herbivore):
         elif action == "make sound":
             self.make_sound()
         else:
-            print(f"{self.name} lays on the tree branch and relax")
+            print(f"{self.name} is laying on the tree branch, looking to the birds.")

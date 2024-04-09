@@ -1,4 +1,5 @@
 from animal import Animal
+import random
 
 class Herbivore(Animal):
     def __init__(self, name, age, energy, max_energy):
@@ -6,7 +7,8 @@ class Herbivore(Animal):
         self.actions.append("run around")
     # overriding from Animal.
     def eat(self):
-        super().eat("fruit")
+        herbivore_food = ["fruit", "lettuce", "carrot", "tree leafs"]
+        super().eat(random.choice(herbivore_food))
 
     def run_around(self):
         print(f"{self.name} is running around")
