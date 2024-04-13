@@ -12,13 +12,13 @@ class Carnivore(Animal):
 
     #active action
     def hunt(self, animals_list):
-        if self.energy <= 15:
+        if self.energy <= 10:
           prey_index = random.randint(0, len(animals_list)-1)
-          if animals_list[prey_index].isinstance(Herbivore):
-            print(f"{self.name} is starving and starts hunting {animals_list[prey_index].__name__}")
-            print(f"{animals_list[prey_index].__name__} is dead")
+          if isinstance(animals_list[prey_index], Herbivore):
+            print(f"{self.name} is starving and starts hunting {animals_list[prey_index].get_name()}")
+            print(f"{animals_list[prey_index].get_name()} is dead")
             animals_list.pop(prey_index)
           else:
-            print(f"Tried hunting a {animals_list[prey_index].__class__.__name__} but failed.")
+            print(f"Tried hunting a {(animals_list[prey_index].__class__.__name__).lower()} but failed.")
       
 

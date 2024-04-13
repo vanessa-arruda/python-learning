@@ -15,8 +15,10 @@ class Visitor:
             if isinstance(animals_list[animal_index], Visitor):
                 print(f"{self.name} is searching for an animal to observe...")
             else:
-                print(f"{self.name} is observing {animals_list[animal_index].get_name()}, the {(animals_list[animal_index].__class__.__name__).lower()} from the fences")
+                print(f"{self.name} is observing {animals_list[animal_index].get_name()}, the {(animals_list[animal_index].__class__.__name__).lower()}, from the fences")
                 break
+    def get_name(self):
+        return self.name
 
     def feed(self, animals_list):
         animal_index = random.randint(0, len(animals_list)-1)
@@ -28,13 +30,17 @@ class Visitor:
 
     def play(self, animals_list):
         animal_index = random.randint(0, len(animals_list)-1)
-        if isinstance(animals_list[animal_index], Visitor):
-            print(f"{self.name} runs around the park with {animals_list[animal_index].get_name()}")
+        if isinstance(animals_list[animal_index], Visitor) and animals_list[animal_index] != self.name:
+            print(f"{self.name} runs around the park with {animals_list[animal_index].get_name()}.")
         elif isinstance(animals_list[animal_index], Herbivore):
-            print(f"{self.name} plays with {animals_list[animal_index].get_name()}, the {animals_list[animal_index].__class__.__name__.lower()}")
+            print(f"{self.name} plays with {animals_list[animal_index].get_name()}, the {animals_list[animal_index].__class__.__name__.lower()}.")
             animals_list[animal_index].play()
         else:
-            print(f"{self.name} tried, but couldn't play with a carnivore.")
+            print(f"{self.name} tried, but couldn't play with the lions now.")
+    
+    def take_photo(self, animals_list):
+        animal_index = random.randint(0, len(animals_list)-1)
+        print(f"{self.name} took a photo of {animals_list[animal_index].get_name()}, the {animals_list[animal_index].__class__.__name__.lower()}.")
 
     #function to control all active/passive actions with this class
     def take_action(self, animals_list):
@@ -47,4 +53,4 @@ class Visitor:
         elif action == "play":
             self.play(animals_list)
         else:
-            print(f"Oh no! {self.name} tried to play with {animals_list[animal_index].get_name()} without success...")
+            self.take_photo(animals_list)
