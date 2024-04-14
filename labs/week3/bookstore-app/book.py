@@ -5,5 +5,5 @@ class Book:
         self.book_author_name = str(input("Type the author's name: "))
         self.book_author_surname = str(input("Type the author's surname: "))
         self.book_pages = int(input("Type the number of pages: "))
-        self.book_price = int(input("Type the book price: "))
+        self.book_price = float(input("Type the book price (SEK): "))
         self.book_stock = int(input("Type the stock amount of this current book: "))
